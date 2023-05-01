@@ -1,4 +1,3 @@
-
 // Import necessary components from React and React Native libraries
 import * as React from 'react';
 import  {useState} from 'react';
@@ -139,14 +138,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 20,
         backgroundColor: 'black',
-        paddingBottom: 150
+        paddingBottom: 210
         
     },
     logo: {
-        height: 100,
-        width: 350,
-        resizeMode: "Contain",
-        paddingBottom: 20 ,
+       height: 0.2 * deviceHeight,
+        width: 0.8 * deviceWidth,
+        resizeMode: "contain",
+        marginTop:10
+        
+        
 
     },
     text: {
@@ -173,12 +174,12 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 15,
     },
     emailLogo: {
-        height: 50,
-        width: 50,
+        height:  0.08 * deviceWidth,
+        width: 0.08 * deviceWidth,
     },
     passwordLogo: {
-        height: 50,
-        width: 50,
+        height: 0.08 * deviceWidth,
+        width: 0.08 * deviceWidth,
     },
     TextInput: {
         backgroundColor: "white",
@@ -232,7 +233,7 @@ const styles = StyleSheet.create({
         height: '32%',
         position: "absolute",
         resizeMode: 'contain',
-        bottom: 40,
+        bottom: 20,
       },
 
     

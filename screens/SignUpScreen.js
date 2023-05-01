@@ -44,9 +44,7 @@ function SignUpScreen({ navigation }) {
   
             try {
               await setDoc(userRef, {
-                name: user.displayName,
                 email: user.email,
-                imageUrl: null,
               });
               console.log('User document created in Firestore successfully!');
             } catch (error) {
@@ -185,7 +183,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       padding: 20,
-      paddingBottom: 150,
+      paddingBottom: 100,
       backgroundColor: 'black'
   },
   logo: {

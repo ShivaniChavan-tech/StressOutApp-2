@@ -20,7 +20,7 @@ const HomeScreen = ({ navigation }) => {
 
         <View style={styles.container}>
           <Text style={styles.titleText}>
-            Welcome,
+            Welcome
           </Text>
           <Text style={styles.description}>
             Your personal depression detection companion. We understand that taking care of your mental health can be challenging, which is why we created this app to help you detect early signs of depression and take proactive steps towards better mental health.
@@ -59,11 +59,11 @@ const styles = StyleSheet.create({
     fontSize: 50,
     fontWeight: "900",
     color: "#ffa500",
-    marginRight: 130,
-    margin: 5,
-    marginTop: 200
-
+    marginRight: 140,
+    margin: 1,
+    marginTop: 130 // Update the marginTop value to position the text on top
   },
+
   text:{
     borderTopLeftRadius: 130,
     fontSize: 40,
@@ -74,16 +74,18 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 20,
     marginTop: 10,
-    textAlign: "left",
+    textAlign: "justify",
     color: "#ffa500",
-    margin: 15
+    margin: 15,
+    letterSpacing: -0.5,
   },
   message: {
     fontSize: 18,
-    textAlign: "left",
+    textAlign: "justify",
     color: "#ffa500",
     margin: 15,
     marginBottom: 200,
+    fontStyle: "italic",
 
   }
 
