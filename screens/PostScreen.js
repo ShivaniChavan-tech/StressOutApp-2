@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Image, View, Text } from 'react-native';
+import { Button, Image, View, Text,ScrollView, TouchableHighlight,StyleSheet } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { getAuth } from 'firebase/auth';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
@@ -96,14 +96,76 @@ try {
   };
 
   return (
-    <View>
-      {imageUri && <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />}
-      <Button title="Pick Image from Gallery" onPress={handleImagePickPress} />
-      <Button title="Take Photo with Camera" onPress={handleCameraPress} />
-      <Button title="Upload Image" onPress={handleUploadPress} />
-    </View>
-    
+    <ScrollView contentContainerStyle={styles.container}>
+      <View>
+      {imageUri && <Image source={{ uri: imageUri }} style={{ width: 300, height: 300, marginTop: 150}} />}
+      </View>
+      <View style={styles.buttonContainer}>
+          <TouchableHighlight 
+              onPress={() => { 
+                handleImagePickPress();
+              }}
+          >
+                  <View style={styles.button}> 
+                      <Text style={styles.buttonText}>Pick Image from Gallery</Text>
+                  </View>
+          </TouchableHighlight>
+      </View>
+      <View style={styles.buttonContainer}>
+          <TouchableHighlight 
+              onPress={() => { 
+                handleCameraPress();
+              }}
+          >
+                  <View style={styles.button}> 
+                      <Text style={styles.buttonText}>Take Photo with Camera</Text>
+                  </View>
+          </TouchableHighlight>
+      </View>
+      <View style={styles.buttonContainer}>
+          <TouchableHighlight 
+              onPress={() => { 
+                handleUploadPress();
+              }}
+          >
+                  <View style={styles.button}> 
+                      <Text style={styles.buttonText}>Upload</Text>
+                  </View>
+          </TouchableHighlight>
+      </View>
+      </ScrollView>
+
   );
 };
 
 export default PostScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    paddingBottom: 150,
+    backgroundColor: 'black'
+},
+  buttonContainer: {
+    margin: 10,
+    alignItems: 'center',
+  },
+  button: {
+    backgroundColor: '#ff8c00',
+    height: 50,
+    width: 300,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20,
+    marginBottom: 20,
+    marginTop: 20,
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
+});
