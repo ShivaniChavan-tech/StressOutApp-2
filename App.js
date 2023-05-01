@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
+
 import Ionicons from 'react-native-vector-icons/Ionicons'; // import icon component to create icons
 import HomeScreen from './screens/HomeScreen';
 import SignInScreen from './screens/SignInScreen';
