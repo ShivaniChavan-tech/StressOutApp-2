@@ -44,9 +44,7 @@ function SignUpScreen({ navigation }) {
   
             try {
               await setDoc(userRef, {
-                name: user.displayName,
                 email: user.email,
-                imageUrl: null,
               });
               console.log('User document created in Firestore successfully!');
             } catch (error) {
